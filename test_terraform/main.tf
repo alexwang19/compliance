@@ -4,6 +4,7 @@ resource "random_id" "sko_bucket" {
 
 resource "aws_s3_bucket" "sko_bucket" {
   bucket = "sysdig-sko-bucket-${random_id.sko_bucket.hex}"
+  acl    = "private"
 }
 
 resource "aws_s3_bucket_public_access_block" "sko_bucket" {
