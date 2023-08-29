@@ -1,10 +1,5 @@
-resource "random_id" "sko_bucket" {
-  byte_length = 8
-}
-
 resource "aws_s3_bucket" "sko_bucket" {
-  bucket = "sysdig-sko-bucket-${random_id.sko_bucket.hex}"
-  acl    = "private"
+  bucket = "sysdig-test-bucket-12345"
 }
 
 resource "aws_s3_bucket_public_access_block" "sko_bucket" {
